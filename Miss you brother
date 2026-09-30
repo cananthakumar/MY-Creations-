@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>For My Senior Bro ❤️</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+  background: #090b18;
+  color: white;
+}
+
+.app {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 20% 10%, #38205f 0, #090b18 42%, #05060d 100%);
+  overflow: hidden;
+}
+
+.hero {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 32px 20px;
+  position: relative;
+}
+
+.stars {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(#fff 1px, transparent 1px);
+  background-size: 42px 42px;
+  opacity: .16;
+}
+
+.card {
+  position: relative;
+  max-width: 760px;
+  padding: 48px 28px;
+  border: 1px solid #ffffff22;
+  border-radius: 28px;
+  background: #ffffff0b;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 25px 80px #0008;
+}
+
+.small {
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #cdb8ff;
+  font-size: 12px;
+}
+
+.hero h1 {
+  font-size: clamp(42px, 9vw, 78px);
+  line-height: 1;
+  margin: 18px 0;
+  background: linear-gradient(90deg, #fff, #e5c9ff, #ffb9d8);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #ddd6ea;
+  line-height: 1.7;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 22px;
+  padding: 14px 25px;
+  border-radius: 999px;
+  border: 0;
+  background: white;
+  color: #171020;
+  font-weight: 800;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.section {
+  max-width: 950px;
+  margin: auto;
+  padding: 85px 22px;
+}
+
+.section h2 {
+  text-align: center;
+  font-size: 36px;
+  margin: 0 0 16px;
+}
+
+.lead {
+  text-align: center;
+  color: #bdb7c9;
+  line-height: 1.7;
+  max-width: 650px;
+  margin: 0 auto 35px;
+}
+
+.message {
+  font-size: 20px;
+  line-height: 1.9;
+  color: #eee;
+  background: #ffffff08;
+  border: 1px solid #ffffff12;
+  padding: 30px;
+  border-radius: 24px;
+}
+
+.photos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.photo {
+  aspect-ratio: 1 / 1;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #302044, #171323);
+  border: 1px dashed #ffffff30;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: #aaa;
+  padding: 15px;
+}
+
+.photo b {
+  color: #eee;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.timeline {
+  display: grid;
+  gap: 16px;
+}
+
+.moment {
+  padding: 22px;
+  border-left: 3px solid #d8a9ff;
+  background: #ffffff08;
+  border-radius: 0 18px 18px 0;
+}
+
+.moment strong {
+  display: block;
+  color: #e8cfff;
+  margin-bottom: 6px;
+}
+
+.final {
+  text-align: center;
+  padding: 100px 20px 130px;
+}
+
+.heart {
+  font-size: 60px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  50% {
+    transform: scale(1.12);
+  }
+}
+
+.final h2 {
+  font-size: 42px;
+  margin: 12px 0;
+}
+
+.final p {
+  color: #bbb3c7;
+}
+
+.footer {
+  text-align: center;
+  color: #777;
+  padding: 25px;
+}
+
+.confetti {
+  position: fixed;
+  top: -20px;
+  font-size: 20px;
+  z-index: 20;
+  animation: fall 3s linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .photos {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 38px 20px;
+  }
+
+  .section {
+    padding: 65px 18px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="app" id="top">
+
+  <!-- OPENING -->
+  <section class="hero">
+
+    <div class="stars"></div>
+
+    <div class="card">
+
+      <div class="small">
+        A little surprise for you
+      </div>
+
+      <h1>
+        For My Senior Bro ❤️
+      </h1>
+
+      <p>
+        Some people enter our lives as seniors…
+        and somehow become family.
+      </p>
+
+      <button class="btn" onclick="openLetter()">
+        Tap to open my message ✨
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- MESSAGE -->
+  <section class="section" id="letter">
+
+    <h2>
+      One thing I wanted to say
+    </h2>
+
+    <p class="lead">
+      Before you start your next chapter,
+      I didn't want to let today pass like an ordinary day.
+    </p>
+
+    <div class="message">
+
+      Bro, today may be your last day here,
+      but the memories don't have a last working day. 😄
+
+      <br><br>
+
+      Thank you for every little help,
+      every conversation,
+      every laugh and every moment that made things
+      easier and happier.
+
+      You were not just my senior —
+      you were someone I could look up to
+      and genuinely call my bro.
+
+      <br><br>
+
+      Wherever you go next,
+      I hope you get everything you're working for.
+
+      Keep growing,
+      keep winning,
+      and don't forget the people
+      who are cheering for you from here. ❤️
+
+      <br><br>
+
+      <b>
+        This isn't goodbye, bro.
+        It's just the beginning of your next chapter. 🫂
+      </b>
+
+    </div>
+
+  </section>
+
+
+  <!-- PHOTOS -->
+  <section class="section">
+
+    <h2>
+      Our Memories 📸
+    </h2>
+
+    <p class="lead">
+      Replace these boxes with your real photos before sharing.
+    </p>
+
+    <div class="photos">
+
+      <div class="photo">
+        <div>
+          📷
+          <br>
+          <b>Photo 1</b>
+          Add your favourite photo
+        </div>
+      </div>
+
+      <div class="photo">
+        <div>
+          📷
+          <br>
+          <b>Photo 2</b>
+          A funny memory
+        </div>
+      </div>
+
+      <div class="photo">
+        <div>
+          📷
+          <br>
+          <b>Photo 3</b>
+          Our best moment
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- MEMORIES -->
+  <section class="section">
+
+    <h2>
+      Things I'll Remember
+    </h2>
+
+    <div class="timeline">
+
+      <div class="moment">
+        <strong>🤝 The support</strong>
+        Whenever I needed help,
+        you were there.
+      </div>
+
+      <div class="moment">
+        <strong>😂 The laughs</strong>
+        The random conversations and jokes
+        that somehow became memories.
+      </div>
+
+      <div class="moment">
+        <strong>🚀 The inspiration</strong>
+        Seeing you move forward makes me
+        want to do better too.
+      </div>
+
+      <div class="moment">
+        <strong>❤️ The bond</strong>
+        Senior by designation,
+        bro by heart.
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FINAL -->
+  <section class="final">
+
+    <div class="heart">
+      ❤️
+    </div>
+
+    <h2>
+      All the best, Bro!
+    </h2>
+
+    <p>
+      Go make your next chapter amazing.
+      <br>
+      And remember —
+      this junior is always cheering for you.
+    </p>
+
+    <button class="btn" onclick="celebrate()">
+      One last surprise 🎉
+    </button>
+
+  </section>
+
+
+  <div class="footer">
+    Made with ❤️ by your junior
+  </div>
+
+</div>
+
+
+<script>
+
+function openLetter() {
+
+  document
+    .getElementById("letter")
+    .scrollIntoView({
+      behavior: "smooth"
+    });
+
+}
+
+
+function celebrate() {
+
+  for (let i = 0; i < 45; i++) {
+
+    const e = document.createElement("span");
+
+    e.className = "confetti";
+
+    e.textContent =
+      ["❤️", "✨", "🎉", "💜", "⭐", "🫂"]
+      [Math.floor(Math.random() * 6)];
+
+    e.style.left =
+      Math.random() * 100 + "vw";
+
+    e.style.animationDelay =
+      Math.random() * 1.5 + "s";
+
+    document.body.appendChild(e);
+
+    setTimeout(() => e.remove(), 4500);
+
+  }
+
+  alert(
+    "No matter where life takes you, bro — stay awesome. ❤️"
+  );
+
+}
+
+</script>
+
+</body>
+</html>
