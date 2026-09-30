@@ -1,605 +1,561 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>For My Senior Bro ❤️</title>
 
 <style>
-* {
-    box-sizing: border-box;
+*{
+  box-sizing:border-box
 }
 
-html, body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background: #080916;
-    color: white;
+html{
+  scroll-behavior:smooth
 }
 
-body {
-    overflow-x: hidden;
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,sans-serif;
+  background:#090b18;
+  color:#fff
 }
 
-.page {
-    display: none;
-    min-height: 100vh;
+.app{
+  min-height:100vh;
+  background:radial-gradient(
+    circle at 20% 10%,
+    #38205f 0,
+    #090b18 42%,
+    #05060d 100%
+  );
+  overflow:hidden
 }
 
-.page.active {
-    display: block;
+.hero{
+  min-height:100vh;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  padding:32px 20px;
+  position:relative
 }
 
-/* Background */
-.hero {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 25px;
-    background:
-        radial-gradient(circle at top left, #44206b, transparent 40%),
-        radial-gradient(circle at bottom right, #5c174c, transparent 40%),
-        #080916;
+.stars{
+  position:absolute;
+  inset:0;
+  background-image:radial-gradient(#fff 1px,transparent 1px);
+  background-size:42px 42px;
+  opacity:.16
 }
 
-.card {
-    width: 100%;
-    max-width: 750px;
-    padding: 50px 30px;
-    border-radius: 30px;
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.15);
-    backdrop-filter: blur(15px);
-    box-shadow: 0 20px 70px rgba(0,0,0,0.5);
+.card{
+  position:relative;
+  max-width:760px;
+  padding:48px 28px;
+  border:1px solid #ffffff22;
+  border-radius:28px;
+  background:#ffffff0b;
+  backdrop-filter:blur(14px);
+  box-shadow:0 25px 80px #0008
 }
 
-.small {
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    color: #d6baff;
-    font-size: 13px;
+.small{
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:#cdb8ff;
+  font-size:12px
 }
 
-h1 {
-    font-size: clamp(40px, 9vw, 75px);
-    margin: 20px 0;
-    background: linear-gradient(90deg,#ffffff,#e7c7ff,#ffb8d8);
-    -webkit-background-clip: text;
-    color: transparent;
+.hero h1{
+  font-size:clamp(42px,9vw,78px);
+  line-height:1;
+  margin:18px 0;
+  background:linear-gradient(90deg,#fff,#e5c9ff,#ffb9d8);
+  -webkit-background-clip:text;
+  color:transparent
 }
 
-.card p {
-    font-size: 18px;
-    line-height: 1.8;
-    color: #ddd6e8;
+.hero p{
+  font-size:18px;
+  color:#ddd6ea;
+  line-height:1.7
 }
 
-/* Buttons */
-.btn {
-    margin-top: 25px;
-    padding: 15px 28px;
-    border: none;
-    border-radius: 50px;
-    background: white;
-    color: #191020;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
+.btn{
+  display:inline-block;
+  margin-top:22px;
+  padding:14px 25px;
+  border-radius:999px;
+  border:0;
+  background:#fff;
+  color:#171020;
+  font-weight:800;
+  cursor:pointer;
+  font-size:15px;
+  transition:.25s
 }
 
-.btn:hover {
-    transform: scale(1.06);
-    box-shadow: 0 10px 30px rgba(255,255,255,0.2);
+.btn:hover{
+  transform:scale(1.05);
+  box-shadow:0 10px 30px #0006
 }
 
-/* Section */
-.section {
-    min-height: 100vh;
-    max-width: 1000px;
-    margin: auto;
-    padding: 80px 25px;
+.section{
+  max-width:950px;
+  margin:auto;
+  padding:85px 22px
 }
 
-.section h2 {
-    text-align: center;
-    font-size: 42px;
-    margin-bottom: 15px;
+.section h2{
+  text-align:center;
+  font-size:36px;
+  margin:0 0 16px
 }
 
-.lead {
-    text-align: center;
-    color: #bbb5c8;
-    margin-bottom: 40px;
+.lead{
+  text-align:center;
+  color:#bdb7c9;
+  line-height:1.7;
+  max-width:650px;
+  margin:0 auto 35px
 }
 
-/* Photos */
-.photos {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+.message{
+  font-size:20px;
+  line-height:1.9;
+  color:#eee;
+  background:#ffffff08;
+  border:1px solid #ffffff12;
+  padding:30px;
+  border-radius:24px
 }
 
-.photo {
-    aspect-ratio: 1 / 1;
-    border-radius: 22px;
-    background: linear-gradient(135deg,#302044,#151322);
-    border: 1px dashed rgba(255,255,255,0.3);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: #aaa;
-    overflow: hidden;
+.photos{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px
 }
 
-.photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.photo{
+  aspect-ratio:1/1;
+  border-radius:20px;
+  overflow:hidden;
+  background:linear-gradient(135deg,#302044,#171323);
+  border:1px solid #ffffff20
 }
 
-.photo b {
-    color: white;
-    display: block;
-    margin-top: 10px;
+.photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:.4s
 }
 
-/* Timeline */
-.timeline {
-    display: grid;
-    gap: 18px;
+.photo img:hover{
+  transform:scale(1.05)
 }
 
-.moment {
-    padding: 25px;
-    background: rgba(255,255,255,0.06);
-    border-left: 4px solid #d5a5ff;
-    border-radius: 0 18px 18px 0;
-    line-height: 1.7;
+.timeline{
+  display:grid;
+  gap:16px
 }
 
-.moment strong {
-    display: block;
-    color: #e7caff;
-    margin-bottom: 8px;
-    font-size: 18px;
+.moment{
+  padding:22px;
+  border-left:3px solid #d8a9ff;
+  background:#ffffff08;
+  border-radius:0 18px 18px 0;
+  line-height:1.6
 }
 
-/* Final */
-.final {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 30px;
-    background:
-        radial-gradient(circle,#481d5b,#080916 65%);
+.moment strong{
+  display:block;
+  color:#e8cfff;
+  margin-bottom:6px
 }
 
-.heart {
-    font-size: 75px;
-    animation: pulse 1.5s infinite;
+.final{
+  text-align:center;
+  padding:100px 20px 130px
 }
 
-.final h2 {
-    font-size: 50px;
-    margin: 20px 0;
+.heart{
+  font-size:60px;
+  animation:pulse 1.5s infinite
 }
 
-.final p {
-    color: #c4bdcc;
-    font-size: 19px;
-    line-height: 1.8;
+@keyframes pulse{
+  50%{
+    transform:scale(1.12)
+  }
 }
 
-/* Animation */
-@keyframes pulse {
-    50% {
-        transform: scale(1.15);
-    }
+.final h2{
+  font-size:42px;
+  margin:12px 0
 }
 
-.confetti {
-    position: fixed;
-    top: -20px;
-    font-size: 25px;
-    z-index: 999;
-    animation: fall 4s linear forwards;
+.final p{
+  color:#bbb3c7;
+  line-height:1.8;
+  font-size:18px
 }
 
-@keyframes fall {
-    to {
-        transform: translateY(110vh) rotate(720deg);
-        opacity: 0;
-    }
+.footer{
+  text-align:center;
+  color:#777;
+  padding:25px
 }
 
-/* Mobile */
-@media(max-width:700px) {
+.page{
+  display:none;
+  min-height:100vh
+}
 
-    .card {
-        padding: 40px 20px;
-    }
+.page.active{
+  display:block
+}
 
-    .photos {
-        grid-template-columns: 1fr;
-    }
+.confetti{
+  position:fixed;
+  top:-20px;
+  font-size:20px;
+  z-index:20;
+  animation:fall 3s linear forwards
+}
 
-    .section {
-        padding: 60px 18px;
-    }
+@keyframes fall{
+  to{
+    transform:translateY(110vh) rotate(720deg);
+    opacity:0
+  }
+}
 
-    .section h2 {
-        font-size: 34px;
-    }
+@media(max-width:700px){
 
-    .final h2 {
-        font-size: 40px;
-    }
+  .photos{
+    grid-template-columns:1fr
+  }
+
+  .card{
+    padding:38px 20px
+  }
+
+  .section{
+    padding:65px 18px
+  }
+
+  .message{
+    font-size:17px
+  }
 }
 </style>
 </head>
 
 <body>
 
-<!-- ================= PAGE 1 ================= -->
+<div class="app" id="top">
 
-<div id="page1" class="page active">
-
-    <section class="hero">
-
-        <div class="card">
-
-            <div class="small">
-                A little surprise for you
-            </div>
-
-            <h1>
-                For My Senior Bro ❤️
-            </h1>
-
-            <p>
-                Some people enter our lives as seniors...
-                and somehow become family.
-            </p>
-
-            <button class="btn" onclick="nextPage(2)">
-                Tap to open my message ✨
-            </button>
-
-        </div>
-
-    </section>
-
-</div>
-
-
-<!-- ================= PAGE 2 ================= -->
-
-<div id="page2" class="page">
+  <!-- PAGE 1 -->
+  <div id="page1" class="page active">
 
     <section class="hero">
 
-        <div class="card">
+      <div class="stars"></div>
 
-            <div class="small">
-                From your junior ❤️
-            </div>
+      <div class="card">
 
-            <h1>
-                One Thing I Wanted To Say
-            </h1>
-
-            <p>
-
-                Bro, today may be your last day here,
-                but the memories don't have a last working day. 😄
-
-                <br><br>
-
-                Thank you for every little help,
-                every conversation,
-                every laugh and every moment
-                that made things easier and happier.
-
-                <br><br>
-
-                You were not just my senior —
-                you became someone I could genuinely call my bro. 🫂
-
-            </p>
-
-            <button class="btn" onclick="nextPage(3)">
-                Continue ❤️
-            </button>
-
+        <div class="small">
+          A little surprise for you
         </div>
 
-    </section>
+        <h1>
+          For My Senior Bro ❤️
+        </h1>
 
-</div>
-
-
-<!-- ================= PAGE 3 ================= -->
-
-<div id="page3" class="page">
-
-    <section class="section">
-
-        <h2>
-            Our Memories 📸
-        </h2>
-
-        <p class="lead">
-            These are the moments I'll always remember.
+        <p>
+          Some people enter our lives as seniors…
+          and somehow become family.
         </p>
 
-        <div class="photos">
+        <button class="btn" onclick="nextPage(2)">
+          Tap to open my message ✨
+        </button>
 
-            <!-- Replace these with your photos -->
-
-            <div class="photo">
-
-                <div>
-                    📷
-
-                    <b>
-                        Photo 1
-                    </b>
-
-                    Add your favourite photo
-
-                </div>
-
-            </div>
-
-
-            <div class="photo">
-
-                <div>
-                    📷
-
-                    <b>
-                        Photo 2
-                    </b>
-
-                    A funny memory
-
-                </div>
-
-            </div>
-
-
-            <div class="photo">
-
-                <div>
-                    📷
-
-                    <b>
-                        Photo 3
-                    </b>
-
-                    Our best moment
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <div style="text-align:center">
-
-            <button class="btn" onclick="nextPage(4)">
-                Next →
-            </button>
-
-        </div>
+      </div>
 
     </section>
 
-</div>
+  </div>
 
 
-<!-- ================= PAGE 4 ================= -->
-
-<div id="page4" class="page">
+  <!-- PAGE 2 -->
+  <div id="page2" class="page">
 
     <section class="section">
 
-        <h2>
-            Things I'll Remember ❤️
-        </h2>
+      <h2>
+        A Message From Your Junior ❤️
+      </h2>
 
-        <div class="timeline">
+      <p class="lead">
+        Before you start your next chapter,
+        I just wanted to say something from the heart.
+      </p>
 
-            <div class="moment">
+      <div class="message">
 
-                <strong>
-                    🤝 The Support
-                </strong>
+        Bro, working with you has been one of those
+        experiences I'll always remember.
 
-                Whenever I needed help,
-                you were there.
+        <br><br>
 
-            </div>
+        You were never just a senior to me —
+        you were someone I could learn from,
+        talk to, and count on.
 
+        <br><br>
 
-            <div class="moment">
+        Thank you for every bit of support,
+        every laugh, and every piece of advice.
 
-                <strong>
-                    😂 The Laughs
-                </strong>
+        <br><br>
 
-                The random conversations,
-                jokes and fun moments
-                that became memories.
+        Wherever you go next, I genuinely wish you
+        success, happiness, and everything you deserve.
 
-            </div>
+        <br><br>
 
+        Keep growing, keep smiling,
+        and don't forget your junior! ❤️
 
-            <div class="moment">
+      </div>
 
-                <strong>
-                    🚀 The Inspiration
-                </strong>
+      <div style="text-align:center">
 
-                Seeing you move forward
-                makes me want to do better too.
+        <button class="btn" onclick="nextPage(3)">
+          See our memories 📸
+        </button>
 
-            </div>
-
-
-            <div class="moment">
-
-                <strong>
-                    ❤️ The Bond
-                </strong>
-
-                Senior by designation,
-                bro by heart.
-
-            </div>
-
-        </div>
-
-
-        <div style="text-align:center">
-
-            <button class="btn" onclick="nextPage(5)">
-                One Last Page ❤️
-            </button>
-
-        </div>
+      </div>
 
     </section>
 
-</div>
+  </div>
 
 
-<!-- ================= PAGE 5 ================= -->
+  <!-- PAGE 3 -->
+  <div id="page3" class="page">
 
-<div id="page5" class="page">
+    <section class="section">
+
+      <h2>
+        Our Memories 📸
+      </h2>
+
+      <p class="lead">
+        Some moments become memories that stay forever.
+      </p>
+
+      <div class="photos">
+
+        <div class="photo">
+          <img src="photo1.jpg" alt="Memory 1">
+        </div>
+
+        <div class="photo">
+          <img src="photo2.jpg" alt="Memory 2">
+        </div>
+
+        <div class="photo">
+          <img src="photo3.jpg" alt="Memory 3">
+        </div>
+
+        <div class="photo">
+          <img src="photo4.jpg" alt="Memory 4">
+        </div>
+
+        <div class="photo">
+          <img src="photo5.jpg" alt="Memory 5">
+        </div>
+
+      </div>
+
+      <div style="text-align:center">
+
+        <button class="btn" onclick="nextPage(4)">
+          What I'll Remember ❤️
+        </button>
+
+      </div>
+
+    </section>
+
+  </div>
+
+
+  <!-- PAGE 4 -->
+  <div id="page4" class="page">
+
+    <section class="section">
+
+      <h2>
+        Things I'll Remember
+      </h2>
+
+      <div class="timeline">
+
+        <div class="moment">
+
+          <strong>
+            🤝 The Support
+          </strong>
+
+          Whenever I needed help,
+          you were there.
+
+        </div>
+
+
+        <div class="moment">
+
+          <strong>
+            😂 The Laughs
+          </strong>
+
+          The random conversations and jokes
+          that somehow became memories.
+
+        </div>
+
+
+        <div class="moment">
+
+          <strong>
+            🚀 The Inspiration
+          </strong>
+
+          Seeing you move forward makes me
+          want to do better too.
+
+        </div>
+
+
+        <div class="moment">
+
+          <strong>
+            ❤️ The Bond
+          </strong>
+
+          Senior by designation,
+          bro by heart.
+
+        </div>
+
+      </div>
+
+
+      <div style="text-align:center">
+
+        <button class="btn" onclick="nextPage(5)">
+          One last page ❤️
+        </button>
+
+      </div>
+
+    </section>
+
+  </div>
+
+
+  <!-- PAGE 5 -->
+  <div id="page5" class="page">
 
     <section class="final">
 
-        <div class="heart">
-            ❤️
-        </div>
+      <div class="heart">
+        ❤️
+      </div>
 
-        <h2>
-            All The Best, Bro!
-        </h2>
+      <h2>
+        All the best, Bro!
+      </h2>
 
-        <p>
+      <p>
+        Go make your next chapter amazing.
+        <br>
+        And remember — this junior is always cheering for you.
+      </p>
 
-            Go make your next chapter amazing. 🚀
-
-            <br>
-
-            Wherever life takes you,
-            I hope you achieve everything
-            you're working for.
-
-            <br><br>
-
-            And remember...
-
-            <br>
-
-            This junior is always cheering for you. 🫂❤️
-
-        </p>
-
-
-        <button class="btn" onclick="celebrate()">
-            One Last Surprise 🎉
-        </button>
+      <button class="btn" onclick="celebrate()">
+        One last surprise 🎉
+      </button>
 
     </section>
+
+  </div>
+
+
+  <div class="footer">
+    Made with ❤️ by your junior
+  </div>
 
 </div>
 
 
 <script>
 
-/* Move to the next page */
+function nextPage(n){
 
-function nextPage(pageNumber) {
+  document
+    .querySelectorAll('.page')
+    .forEach(p => p.classList.remove('active'));
 
-    document
-        .querySelectorAll(".page")
-        .forEach(function(page) {
+  document
+    .getElementById('page' + n)
+    .classList.add('active');
 
-            page.classList.remove("active");
+  window.scrollTo({
+    top:0,
+    behavior:'smooth'
+  });
 
-        });
-
-    document
-        .getElementById("page" + pageNumber)
-        .classList.add("active");
-
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
 }
 
 
-/* Final celebration */
+function celebrate(){
 
-function celebrate() {
+  for(let i=0;i<60;i++){
 
-    const emojis = [
-        "❤️",
-        "✨",
-        "🎉",
-        "💜",
-        "⭐",
-        "🫂",
-        "🥳"
-    ];
+    const e = document.createElement('span');
 
-    for (let i = 0; i < 50; i++) {
+    e.className = 'confetti';
 
-        const confetti =
-            document.createElement("span");
+    e.textContent =
+      ['❤️','✨','🎉','💜','⭐','🫂','🥳']
+      [Math.floor(Math.random()*7)];
 
-        confetti.className = "confetti";
+    e.style.left =
+      Math.random()*100 + 'vw';
 
-        confetti.textContent =
-            emojis[
-                Math.floor(
-                    Math.random() * emojis.length
-                )
-            ];
+    e.style.animationDelay =
+      Math.random()*1.5 + 's';
 
-        confetti.style.left =
-            Math.random() * 100 + "vw";
+    document.body.appendChild(e);
 
-        confetti.style.animationDelay =
-            Math.random() * 1.5 + "s";
+    setTimeout(() => e.remove(),4500);
 
-        document.body.appendChild(confetti);
+  }
 
-        setTimeout(function() {
-            confetti.remove();
-        }, 4500);
-    }
+  setTimeout(() => {
 
-    setTimeout(function() {
+    alert(
+      'No matter where life takes you, bro — stay awesome. ❤️'
+    );
 
-        alert(
-            "No matter where life takes you, bro — stay awesome. ❤️"
-        );
-
-    }, 500);
+  },500);
 
 }
 
